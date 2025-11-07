@@ -31,25 +31,25 @@ void print(cell *T)
 
 void chainage_arriere(cell *T)
 {
-    if (T == NULL)
+    if (T==NULL)
         return;
-    cell *p =T;
+    cell *p=T;
     p->prec=NULL;
-    while (p->next!=NULL)
+    while (p->next)
     {
-        p->next->prec = p;
+        p->next->prec=p;
         p=p->next;
     }
 }
 
 void print_arriere(cell *T) {
-    cell *p = T;
+    cell *p=T;
     while (p->next!=NULL)
-        p = p->next;
+        p=p->next;
     printf("chainage arriere : \n");
-    while (p != NULL)
+    while (p)
     {
-        printf("%d \n", p->val);
+        printf("%d \n",p->val);
         p=p->prec;
     }
 }
